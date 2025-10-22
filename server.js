@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 10000;
 
 // Permitir que tu página de Netlify acceda al proxy
 app.use(cors({
-  origin: "https://invernaderito.netlify.app/", // 👈 reemplazá esto por tu dominio real de Netlify
+  origin: "https://TU_PAGINA.netlify.app", // ⚠️ reemplazá por tu dominio real
 }));
 
 app.use(express.json());
@@ -17,7 +17,7 @@ app.use(express.json());
 app.post("/rele", async (req, res) => {
   const { state } = req.body;
   try {
-    const espResponse = await fetch(`http://10.38.118.177/rele?state=${state}`); // 👈 IP local de tu ESP32
+    const espResponse = await fetch(`http://10.38.118.177/rele?state=${state}`); // ⚠️ IP local de tu ESP32
     const text = await espResponse.text();
     res.json({ ok: true, response: text });
   } catch (err) {
