@@ -17,7 +17,7 @@ app.use(express.json());
 app.post("/rele", async (req, res) => {
   const { state } = req.body;
   try {
-    const espResponse = await fetch(`http://10.38.118.177/rele?state=${state}`); // ⚠️ IP local de tu ESP32
+    const espResponse = await fetch(`http://192.168.1.15/rele?state=${state}`); // ⚠️ IP local de tu ESP32
     const text = await espResponse.text();
     res.json({ ok: true, response: text });
   } catch (err) {
