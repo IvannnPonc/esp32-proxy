@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 10000;
 
 // Permitir que tu página de Netlify acceda al proxy
 app.use(cors({
-  origin: "https://invernaderito.netlify.app/", // ⚠️ reemplazá por tu dominio real
+  origin: "https://invernaderito.netlify.app", // ⚠️ reemplazá por tu dominio real
 }));
 
 app.use(express.json());
